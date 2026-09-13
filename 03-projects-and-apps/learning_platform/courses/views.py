@@ -14,3 +14,11 @@ def send_courses_list(request):
         {"id": 3, "name": "Sampling", "level": "Anirudh"},
     ]
     return JsonResponse(data, safe=False, status=201)
+
+
+def methods_list(request):
+    if request.method == "POST":
+        return JsonResponse({"message": "POST Method received"})
+    if request.method == "GET":
+        return JsonResponse({"message": "Get method received"})
+    return JsonResponse({"message": "Invalid method"}, status=405)
