@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import JsonResponse
 
 
 def students_greeting(request):
-    context = {
-        "name": "Mihir Velaga",
-        "courses": ["Python", "Django", "Linux", "Backend Dev"],
-        "level": "Advanced",
+    data = {
+        "name": "Mihir",
+        "courses": ["Python", "Django", "Node JS"],
+        "level": "Beginner",
     }
-    return render(request, "students/homePage.html", context)
+    return JsonResponse(data)
