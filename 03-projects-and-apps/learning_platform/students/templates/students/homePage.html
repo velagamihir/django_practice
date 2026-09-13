@@ -3,14 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Students app Home Page</title>
+    <title>Student Details</title>
   </head>
   <body>
-    <h1>Welcome {{salutation}}. {{name}}</h1>
-    <p>
-      It is a pleasure to meet you. <br />
-      You are learning {{course}}. <br />
-      You are in the {{level}} level.
-    </p>
+    <h1>Welcome, {{name}}!</h1>
+    <h2>My courses</h2>
+    <ul>
+      {% for course in courses %}
+      <li>{{course}}</li>
+      {% endfor %}
+    </ul>
+    <h2>My Level:</h2>
+    {% if level == 'Beginner'%}
+    <p>You are starting your Django Journey!</p>
+    {% elif level == "Intermediate" %}
+    <p>You are making great progress!</p>
+    {% elif level == 'Advanced' %}
+    <p>You are an advanced Django Learner!</p>
+    {% else %}
+    <p>You are level is unknown</p>
+    {% endif %}
   </body>
 </html>

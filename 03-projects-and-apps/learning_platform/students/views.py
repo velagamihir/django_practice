@@ -4,9 +4,8 @@ from django.http import HttpResponse
 
 def students_greeting(request):
     context = {
-        "salutation": "Mr",
         "name": "Mihir Velaga",
-        "course": "Django",
-        "level": "Beginner",
+        "courses": ["Python", "Django", "Linux", "Backend Dev"],
+        "level": "Advanced",
     }
     return render(request, "students/homePage.html", context)
