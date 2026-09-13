@@ -3,4 +3,10 @@ from django.http import HttpResponse
 
 
 def students_greeting(request):
-    return HttpResponse("Hello from the students app!!")
+    context = {
+        "salutation": "Mr",
+        "name": "Mihir Velaga",
+        "course": "Django",
+        "level": "Beginner",
+    }
+    return render(request, "students/homePage.html", context)
